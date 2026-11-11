@@ -1,0 +1,15 @@
+{% assign matched = 0 %}
+<div class="ef-list">
+{% for post in site.posts %}
+  {% if include.category == nil or post.categories contains include.category %}
+    {% assign matched = matched | plus: 1 %}
+    <a class="ef-item" href="{{ post.url | relative_url }}">
+      <span class="ef-date">{{ post.date | date: '%Y.%m.%d' }} · {{ post.categories | join: ' / ' }}</span>
+      <strong>{{ post.title | escape }}</strong>
+      <span>{{ post.description | escape }}</span>
+      <small>글 자세히 읽기 →</small>
+    </a>
+  {% endif %}
+{% endfor %}
+</div>
+{% if matched == 0 %}<p>아직 글이 없습니다. 새로운 기록을 준비하고 있어요.</p>{% endif %}

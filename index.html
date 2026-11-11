@@ -1,4 +1,34 @@
 ---
-layout: home
-# Index page
+layout: page
+title: 홈
+permalink: /
 ---
+{% include ef-nav.html %}
+<div class="ef-wrap">
+  <header class="ef-hero">
+    <span class="ef-kicker">MY DEVELOPMENT JOURNEY</span>
+    <h1>공대생 개발일지</h1>
+    <p>ExamFlow를 만들며 배운 기술과 시행착오를 쉽게 기록합니다. 글 제목을 누르면 상세 페이지로 이동해요.</p>
+    <a class="ef-btn ef-primary" href="{{ '/devlog/' | relative_url }}">개발일지 보기 →</a>
+    <a class="ef-btn ef-secondary" href="{{ '/examflow/' | relative_url }}">ExamFlow 알아보기</a>
+  </header>
+  <section class="ef-section" aria-labelledby="topics">
+    <h2 id="topics">어떤 글이 있나요?</h2>
+    <div class="ef-grid">
+      <a class="ef-card" href="{{ '/devlog/' | relative_url }}"><span>📒</span><strong>개발일지</strong><small>날짜별로 살펴보는 프로젝트 성장 기록</small></a>
+      <a class="ef-card" href="{{ '/rag-lab/' | relative_url }}"><span>🔎</span><strong>RAG 실험</strong><small>문서 검색과 정확도를 개선하는 과정</small></a>
+      <a class="ef-card" href="{{ '/troubleshooting/' | relative_url }}"><span>🛠️</span><strong>오류 해결</strong><small>실제 문제가 생겼을 때 해결한 방법</small></a>
+      <a class="ef-card" href="{{ '/retrospective/' | relative_url }}"><span>💭</span><strong>회고</strong><small>개발하면서 배운 점과 앞으로의 계획</small></a>
+    </div>
+  </section>
+  <section class="ef-section" aria-labelledby="recent">
+    <div class="ef-section-title"><h2 id="recent">최근 개발일지</h2><a href="{{ '/devlog/' | relative_url }}">전체 글 →</a></div>
+    {% assign recent_posts = site.posts | slice: 0, 5 %}
+    <div class="ef-list">
+    {% for post in recent_posts %}
+      <a class="ef-item" href="{{ post.url | relative_url }}"><span class="ef-date">{{ post.date | date: '%Y.%m.%d' }}</span><strong>{{ post.title | escape }}</strong><span>{{ post.description | escape }}</span><small>글 읽기 →</small></a>
+    {% endfor %}
+    </div>
+  </section>
+  <section class="ef-note"><h2>지금 만들고 있는 것</h2><p><strong>ExamFlow</strong> — 학생들이 강의자료를 활용해 시험을 준비하도록 돕는 웹서비스를 개발 중입니다. 일부 기능은 실험·검증 중이며 완료된 서비스는 아닙니다.</p><a href="{{ '/examflow/' | relative_url }}">진행 상황 확인하기 →</a></section>
+</div>

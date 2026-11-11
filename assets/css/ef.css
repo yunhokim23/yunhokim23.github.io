@@ -1,0 +1,26 @@
+/* Accessible structure-first styles. Visual theme can be changed later without changing links. */
+.ef-nav{display:flex;gap:.3rem;flex-wrap:wrap;border:1px solid var(--main-border-color,#ccc);padding:.65rem;border-radius:12px;margin:0 0 1.4rem}
+.ef-nav a{display:inline-block;padding:.45rem .7rem;border-radius:8px;font-size:.9rem;text-decoration:none!important;font-weight:600}
+.ef-nav a:hover,.ef-nav a:focus-visible{background:rgba(135,92,218,.15);text-decoration:underline!important}
+.ef-wrap{max-width:950px;margin:auto}
+.ef-hero{background:linear-gradient(115deg,#17172f,#493086);border-radius:16px;padding:2rem 1.5rem;color:white;margin-bottom:2rem}
+.ef-hero h1{color:white;font-size:clamp(1.65rem,4vw,2.35rem);margin:.35rem 0}
+.ef-hero p{color:#f1ebff;line-height:1.65}
+.ef-hero .ef-kicker{color:#fce78c;font-size:.8rem;font-weight:800;letter-spacing:.08em}
+.ef-btn{display:inline-block;text-decoration:none!important;padding:.7rem 1rem;border-radius:9px;font-weight:700;margin:.35rem .5rem .25rem 0}
+.ef-primary{background:#ffe779;color:#211a37!important}.ef-secondary{border:1px solid #f2e9ff;color:#fff!important}
+.ef-section{margin:1.5rem 0 2rem}
+.ef-section-title{display:flex;justify-content:space-between;gap:.7rem;align-items:baseline;flex-wrap:wrap}
+.ef-section-title h2{font-size:1.4rem}
+.ef-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+.ef-card{display:flex;flex-direction:column;gap:.4rem;padding:1.1rem;border:1px solid var(--main-border-color,#bbb);border-radius:12px;color:inherit!important;text-decoration:none!important}
+.ef-card span{font-size:1.5rem}.ef-card strong{font-size:1.1rem}
+.ef-card small{opacity:.78}
+.ef-list{display:grid;gap:.7rem;margin:1rem 0}
+.ef-item{display:flex;flex-direction:column;gap:.35rem;border:1px solid var(--main-border-color,#ccc);border-radius:11px;padding:1.05rem;color:inherit!important;text-decoration:none!important}
+.ef-item:hover,.ef-item:focus-visible,.ef-card:hover,.ef-card:focus-visible{border-color:#8b6be4;box-shadow:0 2px 12px rgba(127,83,200,.12)}
+.ef-item strong{font-size:1.03rem}.ef-item span:not(.ef-date){font-size:.9rem;line-height:1.6}
+.ef-date{opacity:.72;font-size:.8rem}.ef-item small{color:var(--link-color,#8250df);font-weight:700}
+.ef-note{padding:1.1rem 1.2rem;border-radius:12px;background:rgba(128,94,207,.09);margin:1.5rem 0}
+.ef-page h2{margin-top:1.3rem}
+@media(max-width:600px){.ef-grid{grid-template-columns:1fr}.ef-hero{padding:1.5rem 1.15rem}.ef-nav{gap:.15rem}.ef-nav a{font-size:.83rem;padding:.35rem .55rem}}
